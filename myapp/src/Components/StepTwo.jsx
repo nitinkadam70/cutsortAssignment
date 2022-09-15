@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import {
-  Box,
   Button,
   InputLabel,
   TextField,
@@ -19,19 +18,22 @@ const StepTwo = () => {
     });
   };
   return (
-    <>
-      <Box>
+    <div className="steps">
+      <div className="steps">
         <Typography component="h1" variant="h5">
           Let's set up a home for all your work...
         </Typography>
-        <Typography component="p" variant="p">
+        <br />
+        <Typography color={'#808A9F'} component="p" variant="p">
           You can always create another workspace leter.
         </Typography>
-      </Box>
-      <Box>
+      </div>
+      <br />
+      <div className="Input">
         <div>
           <InputLabel>Workspace Name</InputLabel>
           <TextField
+            className="IW"
             name="workspaceName"
             onChange={handleChange}
             placeholder="Eden"
@@ -39,11 +41,13 @@ const StepTwo = () => {
             variant="outlined"
           />
         </div>
+        <br />
         <div>
           <InputLabel>
             Workspace URL <span>(optional)</span>
           </InputLabel>
           <TextField
+            className="IW"
             name="workspaceURL"
             onChange={handleChange}
             placeholder="Example"
@@ -51,13 +55,14 @@ const StepTwo = () => {
             variant="outlined"
           />
         </div>
+        <br />
         <div>
           <Button onClick={() => setCurrentStep(2)}>
             Create Workspace
           </Button>
         </div>
-      </Box>
-    </>
+      </div>
+    </div>
   );
 };
 

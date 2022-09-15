@@ -14,7 +14,7 @@ import StepOne from '../Components/StepOne';
 import StepThree from '../Components/StepThree';
 import StepTwo from '../Components/StepTwo';
 import { multiStepContext } from '../Context/StepContext';
-
+import logo from '../Image/logo.png';
 const Form = () => {
   const { userData, currentStep } = useContext(multiStepContext);
 
@@ -31,8 +31,12 @@ const Form = () => {
     }
   };
   return (
-    <>
-      <Box>
+    <div className="main-container">
+      <center>
+        <img src={logo} alt="" />
+      </center>
+      <br />
+      <div>
         <Stepper activeStep={currentStep} alternativeLabel>
           <Step>
             <StepLabel></StepLabel>
@@ -47,10 +51,11 @@ const Form = () => {
             <StepLabel></StepLabel>
           </Step>
         </Stepper>
-      </Box>
-
-      <Box>{showSteps(currentStep)}</Box>
-    </>
+      </div>
+      <br />
+      <br />
+      <div>{showSteps(currentStep)}</div>
+    </div>
   );
 };
 

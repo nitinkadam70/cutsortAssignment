@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import {
-  Box,
   Button,
   InputLabel,
   TextField,
@@ -23,25 +22,45 @@ const StepThree = () => {
     });
   };
   return (
-    <>
-      <Box>
+    <div className="steps">
+      <div>
         <Typography component="h1" variant="h5">
           How are you planning to use Eden?
         </Typography>
-        <Typography component="p" variant="p">
+        <br />
+        <Typography color={'#808A9F'} component="p" variant="p">
           We'll streamline your setup experience accordingly.
         </Typography>
-      </Box>
-      <Box>
+      </div>
+      <br />
+      <div>
         <div>
-          <Box border={'1px solid black'}></Box>
-          <Box border={'1px solid black'}></Box>
+          <input
+            name="workplace"
+            onChange={handleChange}
+            type="radio"
+            placeholder="For myself"
+            value={'For myself'}
+          />
+          <span>For myself</span>
         </div>
+        <br />
+        <div>
+          <input
+            name="workplace"
+            onChange={handleChange}
+            type="radio"
+            placeholder="With my team"
+          />
+          <span>With my team</span>
+        </div>
+        <br />
+
         <div>
           <Button onClick={submitData}>Create Workspace</Button>
         </div>
-      </Box>
-    </>
+      </div>
+    </div>
   );
 };
 
